@@ -11,6 +11,24 @@
   writing-mode: vertical-lr;
 }
 
+.animated-gradient-text {
+  background: linear-gradient(90deg, #32E01F, #32E01F, #F5F000);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
