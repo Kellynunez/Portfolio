@@ -5,10 +5,17 @@ import { OutlineButton } from "../buttons/OutlineButton";
 
 export const Header = () => {
   return (
-    <header className="h-[72px] px-4 flex items-center justify-between sticky top-0 z-20 bg-zinc-900/50 backdrop-blur-md">
+    <header className="group h-[72px] px-4 flex items-center justify-between sticky top-0 z-20 bg-zinc-900/50 backdrop-blur-md">
       <MyLinks />
-      <OutlineButton onClick={() => window.open("/cv-kellynunez-espanol.pdf")}>
-        Resumen
+      <OutlineButton onClick={() => {
+        const link = document.createElement('a');
+        link.href = "/cv-kellynunez-espanol.pdf";
+        link.download = "cv-kellynunez-espanol.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }}>
+          CVitae
       </OutlineButton>
     </header>
   );
@@ -17,7 +24,7 @@ export const Header = () => {
 export const MyLinks = () => (
   <div className="flex items-center text-lg gap-4">
     <Link
-      className="text-zinc-300 hover:text-indigo-300 transition-colors"
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
       href="https://www.linkedin.com/in/kellynunezh/"
       target="_blank"
       rel="nofollow"
@@ -25,7 +32,7 @@ export const MyLinks = () => (
       <SiLinkedin />
     </Link>
     <Link
-      className="text-zinc-300 hover:text-indigo-300 transition-colors"
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
       href="https://github.com/kellynunez"
       target="_blank"
       rel="nofollow"
@@ -33,7 +40,7 @@ export const MyLinks = () => (
       <SiGithub />
     </Link>
     <Link
-      className="text-zinc-300 hover:text-indigo-300 transition-colors"
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
       href="https://www.behance.net/kellynunezh"
       target="_blank"
       rel="nofollow"
@@ -41,7 +48,7 @@ export const MyLinks = () => (
       <SiBehance />
     </Link>
     <Link
-      className="text-zinc-300 hover:text-indigo-300 transition-colors"
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
       href="https://www.instagram.com/kellynunz"
       target="_blank"
       rel="nofollow"
@@ -49,7 +56,7 @@ export const MyLinks = () => (
       <SiInstagram />
     </Link>
     <Link
-      className="text-zinc-300 hover:text-indigo-300 transition-colors"
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
       href="https://wa.me/51957268339"
       target="_blank"
       rel="nofollow"

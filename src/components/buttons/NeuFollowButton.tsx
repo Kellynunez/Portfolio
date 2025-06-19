@@ -1,17 +1,21 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   motion,
   useMotionTemplate,
   useMotionValue,
   useSpring,
 } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiArrowDown } from "react-icons/fi";
 
 const SPRING_OPTIONS = {
   mass: 1.5,
   stiffness: 500,
   damping: 100,
 };
+
+const CYCLES_PER_LETTER = 2;
+const SHUFFLE_TIME = 50;
+const CHARS = "!@#$%^&*():{};|,.<>/?";
 
 interface NeuFollowButtonProps {
   children: React.ReactNode;
@@ -25,6 +29,8 @@ const NeuFollowButton: React.FC<NeuFollowButtonProps> = ({
   className = ""
 }) => {
   const ref = useRef<HTMLButtonElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [text, setText] = useState(children as string);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -55,21 +61,67 @@ const NeuFollowButton: React.FC<NeuFollowButtonProps> = ({
     y.set(0);
   };
 
+  const scramble = () => {
+    const targetText = children as string;
+    let pos = 0;
+
+    intervalRef.current = setInterval(() => {
+      const scrambled = targetText.split("")
+        .map((char, index) => {
+          if (pos / CYCLES_PER_LETTER > index) {
+            return char;
+          }
+
+          const randomCharIndex = Math.floor(Math.random() * CHARS.length);
+          const randomChar = CHARS[randomCharIndex];
+
+          return randomChar;
+        })
+        .join("");
+
+      setText(scrambled);
+      pos++;
+
+      if (pos >= targetText.length * CYCLES_PER_LETTER) {
+        stopScramble();
+      }
+    }, SHUFFLE_TIME);
+  };
+
+  const stopScramble = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    setText(children as string);
+  };
+
   return (
-    <div className={`h-16 w-full max-w-72 bg-black ${className}`}>
+    <div className={`h-20 w-92 max-w-92 bg-black ${className}`}>
       <motion.button
         ref={ref}
         style={{
           transform,
+          animation: 'gradient-x 3s ease infinite'
         }}
         onMouseMove={handleMove}
-        onMouseLeave={handleReset}
+        onMouseLeave={() => {
+          handleReset();
+          stopScramble();
+        }}
+        onMouseEnter={scramble}
         onMouseDown={handleReset}
         onClick={onClick}
-        className="group flex h-full w-full items-center justify-between text-black border-2 border-[#32E01F] hover:border-[#F5F000] bg-[#32E01F] hover:bg-[#F5F000] px-8 text-xl font-semibold"
+        className="group flex min-h-[50px] h-full w-full items-center justify-between text-black 
+         text-xl font-semibold 
+         transition-all duration-300 bg-gradient-to-r from-[#FF0099] via-[#00FF85] to-[#FF0099] bg-[length:200%_100%] animate-gradient-x"
       >
-        <Copy>{children}</Copy>
-        <Arrow />
+        <div className="px-6 h-[80px] w-[165px] flex items-center bg-white font-jetbrains-mono">
+          <Copy>{text}</Copy>
+        </div>
+        <div className="px-6 group-hover:pl-3 group-hover:pr-6 border-l border-black group-hover:bg-[#00FF85] border-r-0 group-hover:text-[#FFFFFF] h-[80px] flex items-center">
+          <Arrow />
+        </div>
+        
       </motion.button>
     </div>
   );
@@ -77,7 +129,7 @@ const NeuFollowButton: React.FC<NeuFollowButtonProps> = ({
 
 const Copy: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <span className="relative overflow-hidden pr-1">
+    <span className="relative overflow-hidden">
       <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full">
         {children}
       </span>
@@ -90,8 +142,8 @@ const Copy: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
 const Arrow = () => (
   <div className="pointer-events-none flex h-6 w-6 overflow-hidden text-2xl">
+    <FiArrowDown className="shrink-0 -translate-x-full text-black transition-transform duration-300 group-hover:translate-x-0" />
     <FiArrowRight className="shrink-0 -translate-x-full text-black transition-transform duration-300 group-hover:translate-x-0" />
-    <FiArrowRight className="shrink-0 -translate-x-full transition-transform duration-300 group-hover:translate-x-0" />
   </div>
 );
 

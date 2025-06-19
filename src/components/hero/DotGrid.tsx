@@ -1,10 +1,67 @@
+import { useEffect, useRef } from "react";
 import anime from "animejs";
 
 const GRID_WIDTH = 25;
 const GRID_HEIGHT = 20;
 
 const DotGrid = () => {
+  const animationRef = useRef<any>(null);
+  const wavePositionRef = useRef<number>(0);
+
+  const animateWave = () => {
+    if (animationRef.current) {
+      animationRef.current.pause();
+    }
+
+    // Crear una ola que se propaga desde la posición actual
+    animationRef.current = anime({
+      targets: ".dot-point",
+      scale: [
+        { value: 1.35, easing: "easeOutSine", duration: 300 },
+        { value: 1, easing: "easeInOutQuad", duration: 300 },
+      ],
+      translateY: [
+        { value: -15, easing: "easeOutSine", duration: 300 },
+        { value: 0, easing: "easeInOutQuad", duration: 300 },
+      ],
+      opacity: [
+        { value: 1, easing: "easeOutSine", duration: 300 },
+        { value: 0.5, easing: "easeInOutQuad", duration: 300 },
+      ],
+      delay: anime.stagger(50, {
+        grid: [GRID_WIDTH, GRID_HEIGHT],
+        from: wavePositionRef.current,
+      }),
+      complete: () => {
+        // Mover la posición de la ola al siguiente punto
+        wavePositionRef.current = (wavePositionRef.current + 1) % (GRID_WIDTH * GRID_HEIGHT);
+        // Programar la siguiente ola
+        setTimeout(animateWave, 200);
+      },
+    });
+  };
+
+  useEffect(() => {
+    // Iniciar la ola continua
+    animateWave();
+
+    return () => {
+      if (animationRef.current) {
+        animationRef.current.pause();
+      }
+    };
+  }, []);
+
   const handleDotClick = (e: any) => {
+    // Pausar la ola actual
+    if (animationRef.current) {
+      animationRef.current.pause();
+    }
+
+    // Animar desde el punto clickeado
+    const clickedIndex = parseInt(e.target.dataset.index);
+    wavePositionRef.current = clickedIndex;
+
     anime({
       targets: ".dot-point",
       scale: [
@@ -13,7 +70,7 @@ const DotGrid = () => {
       ],
       translateY: [
         { value: -15, easing: "easeOutSine", duration: 250 },
-        { value: 1, easing: "easeInOutQuad", duration: 500 },
+        { value: 0, easing: "easeInOutQuad", duration: 500 },
       ],
       opacity: [
         { value: 1, easing: "easeOutSine", duration: 250 },
@@ -21,8 +78,15 @@ const DotGrid = () => {
       ],
       delay: anime.stagger(100, {
         grid: [GRID_WIDTH, GRID_HEIGHT],
-        from: e.target.dataset.index,
+        from: clickedIndex,
       }),
+      complete: () => {
+        // Reanudar la ola continua después de la interacción
+        setTimeout(() => {
+          wavePositionRef.current = (clickedIndex + 1) % (GRID_WIDTH * GRID_HEIGHT);
+          animateWave();
+        }, 1000);
+      },
     });
   };
 
@@ -33,12 +97,12 @@ const DotGrid = () => {
     for (let j = 0; j < GRID_HEIGHT; j++) {
       dots.push(
         <div
-          className="group cursor-crosshair rounded-full p-2 transition-colors hover:bg-zinc-600"
+          className="group cursor-crosshair rounded-full p-2 transition-colors hover:bg-[#1E90FF]/30"
           data-index={index}
           key={`${i}-${j}`}
         >
           <div
-            className="dot-point h-2 w-2 rounded-full bg-gradient-to-b from-zinc-700 to-zinc-400 opacity-50 group-hover:from-indigo-500 group-hover:to-white"
+            className="dot-point h-2 w-2 rounded-full bg-gradient-to-b from-zinc-700 to-zinc-400 opacity-50 group-hover:from-[#FF0099] group-hover:to-[#FF0099]"
             data-index={index}
           />
         </div>

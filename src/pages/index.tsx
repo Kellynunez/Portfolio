@@ -1,15 +1,15 @@
-import { Inconsolata } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import { HomPage } from "@/components";
 
-const inconsolata = Inconsolata({ 
+const jetbrainsMono = JetBrains_Mono({ 
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-inconsolata"
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-jetbrains-mono"
 });
 
 export default function Home() {
   return (
-    <main className={`font-satoshi ${inconsolata.variable}`}>
+    <main className={`font-satoshi ${jetbrainsMono.variable}`}>
       <HomPage />
     </main>
   );

@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+import { FiDownload } from "react-icons/fi";
 
 type Props = {
   children: ReactNode;
@@ -9,26 +10,19 @@ type Props = {
 export const OutlineButton = ({ children, className, ...rest }: Props) => {
   return (
     <button
-      className={twMerge(
-        `relative z-0 flex items-center gap-2 overflow-hidden bg-[#32E01F] px-4 py-2 font-medium text-sm
-        text-black transition-all duration-300
-        
-        before:absolute before:inset-0
-        before:-z-10 before:translate-x-[150%]
-        before:translate-y-[150%] before:scale-[2.5]
-        before:rounded-[100%] before:bg-[#F5F000]
-        before:transition-transform before:duration-1000
-        before:content-[""]
-
-        hover:text-zinc-950
-        hover:before:translate-x-[0%]
-        hover:before:translate-y-[0%]
-        active:scale-95`,
-        className
-      )}
-      {...rest}
-    >
-      {children}
+      className="group relative z-0 flex items-center overflow-hidden font-medium font-jetbrains-mono
+        text-black tracking-wide transition-all duration-300 bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-200 bg-[length:200%_100%] animate-gradient-x 
+        border border-black hover:border-black min-h-[30px]"
+        style={{
+          animation: 'gradient-x 3s ease infinite'
+        }}
+        {...rest}>
+          <div className="hover:text-black px-3 bg-white group-hover:bg-white h-[35px] flex items-center">
+            {children}
+          </div>
+          <div className="px-3 border-l border-black group-hover:bg-[#00FF85] group-hover:text-black h-[35px] flex items-center">
+            <FiDownload />
+          </div>
     </button>
   );
 };

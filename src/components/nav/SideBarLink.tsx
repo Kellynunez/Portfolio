@@ -30,7 +30,7 @@ export const SideBarLink = ({
       }}
       className={`writing-vertical h-24 shrink-0 flex items-center justify-center border-r-2 text-sm transition-all w-full ${
         selected === value
-          ? "bg-zinc-800 border-[#32E01F] opacity-100"
+          ? "bg-zinc-800 border-[#00FF85] opacity-100"
           : "border-transparent hover:border-r-zinc-50 opacity-50 hover:bg-zinc-900"
       }`}
     >
