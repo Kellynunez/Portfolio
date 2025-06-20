@@ -9,6 +9,18 @@ import {
 } from "react-icons/fi";
 import { SectionHeader } from "../util/SectionHeader";
 
+interface EducationCardProps {
+  position: number;
+  index: number;
+  title: string;
+  institution: string;
+  degree: string;
+  period: string;
+  description: string;
+  Icon: React.ComponentType<{ className?: string }>;
+  achievements?: string[];
+}
+
 export const Education = () => {
   const [position, setPosition] = useState(0);
 
@@ -54,7 +66,7 @@ export const Education = () => {
   );
 };
 
-const EducationCard = ({ position, index, title, institution, degree, period, description, Icon, achievements }) => {
+const EducationCard = ({ position, index, title, institution, degree, period, description, Icon, achievements }: EducationCardProps) => {
   const translateAmt =
     position >= index ? index * 100 : index * 100 - 100 * (index - position);
 
