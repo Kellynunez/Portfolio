@@ -11,6 +11,16 @@
   writing-mode: vertical-lr;
 }
 
+.link-with-spacing {
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+.link-with-spacing:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 @keyframes gradient-shift {
   0%, 100% {
     background-position: 0% 50%;

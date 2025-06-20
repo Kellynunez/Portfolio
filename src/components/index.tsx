@@ -5,6 +5,7 @@ import Hero from "./hero/Hero";
 import { About } from "./about/About";
 import { Projects } from "./projects/Projects";
 import { Experience } from "./experience/Experience";
+import { Education } from "./education/Education";
 import { Contact } from "./contact/Contact";
 
 export const HomPage = () => {
@@ -18,6 +19,7 @@ export const HomPage = () => {
           <About />
           <Projects />
           <Experience />
+          <Education />
           <Contact />
         </div>
       </main>
