@@ -24,7 +24,7 @@ export const Header = () => {
 export const MyLinks = () => (
   <div className="flex items-center text-lg gap-4">
     <Link
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
       href="https://www.linkedin.com/in/kellynunezh/"
       target="_blank"
       rel="nofollow"
@@ -32,7 +32,7 @@ export const MyLinks = () => (
       <SiLinkedin />
     </Link>
     <Link
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
       href="https://github.com/kellynunez"
       target="_blank"
       rel="nofollow"
@@ -40,7 +40,7 @@ export const MyLinks = () => (
       <SiGithub />
     </Link>
     <Link
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
       href="https://www.behance.net/kellynunezh"
       target="_blank"
       rel="nofollow"
@@ -48,7 +48,7 @@ export const MyLinks = () => (
       <SiBehance />
     </Link>
     <Link
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
       href="https://www.instagram.com/kellynunz"
       target="_blank"
       rel="nofollow"
@@ -56,7 +56,7 @@ export const MyLinks = () => (
       <SiInstagram />
     </Link>
     <Link
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
       href="https://wa.me/51957268339"
       target="_blank"
       rel="nofollow"
@@ -64,7 +64,7 @@ export const MyLinks = () => (
       <SiWhatsapp />
     </Link>
     <Link
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
       href="mailto:kellynunezhu@gmail.com"
       rel="nofollow"
     >
