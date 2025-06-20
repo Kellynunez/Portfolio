@@ -1,13 +1,30 @@
 import { SectionHeader } from "../util/SectionHeader";
 import { ExperienceItem } from "./ExperienceItem";
+import { useState } from "react";
 
 export const Experience = () => {
+  const [showAll, setShowAll] = useState(false);
+  
+  // Mostrar solo los primeros 3 elementos inicialmente
+  const displayedExperience = showAll ? experience : experience.slice(0, 3);
+  
   return (
     <section className="section-wrapper" id="experience">
       <SectionHeader title="Experience" dir="l" />
-      {experience.map((item) => (
+      {displayedExperience.map((item) => (
         <ExperienceItem key={item.title} {...item} />
       ))}
+      
+      {experience.length > 3 && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 rounded-lg transition-colors duration-200 border border-zinc-700 hover:border-zinc-600"
+          >
+            {showAll ? "Mostrar menos" : `Mostrar ${experience.length - 3} más`}
+          </button>
+        </div>
+      )}
     </section>
   );
 };
@@ -17,7 +34,7 @@ const experience = [
     title: "Freelance",
     position: "Digital Product Design",
     time: "2021 - Actualidad",
-    location: "Perú y USA",
+    location: "Global",
     mode: "Remoto",
     description:
       "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UI/UX. Además realizo diseno grafico e identidad visual, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
@@ -27,7 +44,7 @@ const experience = [
     title: "Voltron Data",
     position: "Manager, Design & Web Development",
     time: "2021 - 2024",
-    location: "Global",
+    location: "Mountain View, CA",
     mode: "Remoto",
     description:
       "Lideré y rediseñé la identidad visual y el sistema de diseño digital, aplicando metodologías ágiles para asegurar entregas iterativas. Migré el sitio de WordPress a Jekyll y blog en Markdown, y luego reconstruí las más de 20 páginas en React.js a modo oscuro.",
