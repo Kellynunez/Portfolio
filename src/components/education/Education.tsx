@@ -3,9 +3,19 @@ import { useState } from "react";
 import {
   FiChevronLeft,
   FiChevronRight,
-  FiFeather,
+  FiPenTool,
+  FiMessageSquare,
   FiAward,
   FiCalendar,
+  FiVolume2,
+  FiMinimize2,
+  FiCode,
+  FiGlobe,
+  FiTag,
+  FiGitPullRequest,
+  FiTable,
+  FiHardDrive,
+  FiGrid
 } from "react-icons/fi";
 import { SectionHeader } from "../util/SectionHeader";
 
@@ -16,6 +26,7 @@ interface EducationCardProps {
   institution: string;
   degree: string;
   period: string;
+  time: string;
   description: string;
   Icon: React.ComponentType<{ className?: string }>;
   achievements?: string[];
@@ -66,7 +77,7 @@ export const Education = () => {
   );
 };
 
-const EducationCard = ({ position, index, title, institution, degree, period, description, Icon, achievements }: EducationCardProps) => {
+const EducationCard = ({ position, index, title, institution, degree, period, time, description, Icon, achievements }: EducationCardProps) => {
   const translateAmt =
     position >= index ? index * 100 : index * 100 - 100 * (index - position);
 
@@ -88,12 +99,12 @@ const EducationCard = ({ position, index, title, institution, degree, period, de
         <p className="mb-2 text-sm text-zinc-400">{degree}</p>
         <div className="flex items-center gap-2 mb-4 text-sm text-zinc-400">
           <FiCalendar className="text-[#FF0099]" />
-          <span>{period}</span>
+          <span>{period}</span> ({time})
         </div>
         <p className="mb-4 leading-relaxed">{description}</p>
         {achievements && achievements.length > 0 && (
           <div>
-            <h4 className="mb-2 font-semibold text-[#FF0099]">Logros destacados:</h4>
+            <h4 className="mb-2 font-normal text-[#FF0099]">Logros destacados:</h4>
             <ul className="space-y-1">
               {achievements.map((achievement, idx) => (
                 <li key={idx} className="text-sm flex items-start gap-2">
@@ -111,45 +122,157 @@ const EducationCard = ({ position, index, title, institution, degree, period, de
 
 const education = [
   {
-    title: "Diseño Gráfico Publicitario",
-    institution: "Instituto Leo Design",
-    degree: "Carrera Técnica (Titulado)",
-    period: "2011 - 2014",
-    Icon: FiFeather,
+    title: "Comunicación y Publicidad",
+    institution: "Universidad San Ignasio de Loyola (USIL)",
+    degree: "Bachiller",
+    period: "2021 - 2025",
+    time: "5 años",
+    Icon: FiVolume2,
     description:
-      "Formación especializada en diseño gráfico, identidad visual y comunicación visual. Aprendizaje de herramientas de software de diseño gráfico y dibujo técnico.",
+        "Lorem ipsum...",
     achievements: [
-      "Proyecto final destacado en identidad corporativa",
-      "Liderazgo en exposiciones estudiantiles",
-      "Manejo avanzado de Adobe Creative Suite"
+        "Lorem ipsum...",
+        "Tercio Superior"
+    ]
+  },
+  {
+    title: "Human Centered Design",
+    institution: "Pontificia Universidad Católica del Perú (PUCP)",
+    degree: "Especialización",
+    period: "2022",
+    time: "108 Horas",
+    Icon: FiMinimize2,
+    description:
+        "Lorem ipsum...",
+    achievements: [
+        "Lorem ipsum...",
+        "Tercio Superior"
+    ]
+  },
+  {
+    title: "Desarrollo Frontend",
+    institution: "Codecademy",
+    degree: "Certificados",
+    period: "2021",
+    time: "80 Horas",
+    Icon: FiCode,
+    description:
+        "Aprendizaje autodidacta en JavaScript, Tailwind CSS, Jekyll.js, Netlify, Git and Github.",
+    achievements: [
+        "Lorem ipsum...",
+        "Lorem ipsum..."
+    ]
+  },
+  {
+    title: "Inglés Comunicacional",
+    institution: "Instituto Privateacher",
+    degree: "Especialización",
+    period: "2019 - 2020",
+    time: "100 Horas",
+    Icon: FiMessageSquare,
+    description:
+        "Aprendizaje presencial 1:1 de vocabulario y pronunciación.",
+    achievements: [
+        "Buena pronunciación en el idioma",
+        "Fluidez en la conversación"
+    ]
+  },
+  {
+    title: "Branding y Gestión de Marca",
+    institution: "Instituto Toulouse Lautrec",
+    degree: "Especialización",
+    period: "2019 - 2020",
+    time: "100 Horas",
+    Icon: FiTag,
+    description:
+        "Lorem ipsum...",
+    achievements: [
+        "Lorem ipsum...",
+        "Quinto Superior"
+    ]
+  },
+  {
+    title: "Desarrollo de Aplicaciones Web",
+    institution: "Udemy",
+    degree: "Certificados",
+    period: "2018",
+    time: "40 Horas",
+    Icon: FiGitPullRequest,
+    description:
+        "Aprendizaje autodidacta en Bootstrap, Materialize, Node.js y Vue.js.",
+    achievements: [
+        "Lorem ipsum...",
+        "Lorem ipsum..."
+    ]
+  },
+  {
+    title: "Especialización en Diseño UI/UX",
+    institution: "Instituto Toulouse Lautrec",
+    degree: "Especialización",
+    period: "2017",
+    time: "100 Horas",
+    Icon: FiTable,
+    description:
+        "Lorem ipsum...",
+    achievements: [
+        "Lorem ipsum...",
+        "Quinto Superior"
+    ]
+  },
+  {
+    title: "Computación e Informática",
+    institution: "Instituto Cibertec",
+    degree: "Diplomado",
+    period: "2016 - 2017",
+    time: "18 Meses",
+    Icon: FiHardDrive,
+    description:
+        "Lorem ipsum...",
+    achievements: [
+        "Lorem ipsum...",
+        "Tercio Superior"
+    ]
+  },
+  {
+    title: "Diseño Web Responsive",
+    institution: "Codecademy",
+    degree: "Certificados",
+    period: "2016",
+    time: "50 Horas",
+    Icon: FiGrid,
+    description:
+        "Aprendizaje autodidacta en HTML, CSS Intermedio, Media Queries y Javascript.",
+    achievements: [
+        "Buen manejo de html, css, javascript, bootstrap, etc.",
+        "Personalización de estilos en las interfaces de usuario"
+    ]
+  },
+  {
+    title: "Inglés Básico, Medio y Avanzado",
+    institution: "Británico",
+    degree: "Certificado de Idioma Extranjero",
+    period: "2015 - 2016",
+    time: "1 Año 7 Meses",
+    Icon: FiGlobe,
+    description:
+      "Formación especializada en inglés básico, intermedio y avanzado. Aprendizaje de gramática, vocabulario y pronunciación.",
+    achievements: [
+      "Buena pronunciación y fluidez en el idioma",
+      "Buen manejo de la gramática y vocabulario"
     ]
   },
   {
     title: "Diseño Gráfico Publicitario",
     institution: "Instituto Leo Design",
-    degree: "Carrera Técnica (Titulado)",
+    degree: "Titulado de Carrera Técnica",
     period: "2011 - 2014",
-    Icon: FiFeather,
+    time: "3 años",
+    Icon: FiPenTool,
     description:
       "Formación especializada en diseño gráfico, identidad visual y comunicación visual. Aprendizaje de herramientas de software de diseño gráfico y dibujo técnico.",
     achievements: [
-      "Proyecto final destacado en identidad corporativa",
-      "Liderazgo en exposiciones estudiantiles",
-      "Manejo avanzado de Adobe Creative Suite"
-    ]
-  },
-  {
-    title: "Diseño Gráfico Publicitario",
-    institution: "Instituto Leo Design",
-    degree: "Carrera Técnica (Titulado)",
-    period: "2011 - 2014",
-    Icon: FiFeather,
-    description:
-      "Formación especializada en diseño gráfico, identidad visual y comunicación visual. Aprendizaje de herramientas de software de diseño gráfico y dibujo técnico.",
-    achievements: [
-      "Proyecto final destacado en identidad corporativa",
-      "Liderazgo en exposiciones estudiantiles",
-      "Manejo avanzado de Adobe Creative Suite"
+      "Proyectos destacados en identidad corporativa y liderazgo en proyectos",
+      "Mención Honorífica - Quinto Superior"
     ]
   },
 ];
