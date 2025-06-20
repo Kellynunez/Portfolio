@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { SiBehance, SiGithub, SiInstagram, SiLinkedin, SiWhatsapp } from "react-icons/si";
+import { SiBehance, SiGithub, SiInstagram, SiLinkedin, SiWhatsapp, SiGmail } from "react-icons/si";
 import { OutlineButton } from "../buttons/OutlineButton";
 
 export const Header = () => {
@@ -62,6 +62,13 @@ export const MyLinks = () => (
       rel="nofollow"
     >
       <SiWhatsapp />
+    </Link>
+    <Link
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      href="mailto:kellynunezhu@gmail.com"
+      rel="nofollow"
+    >
+      <SiGmail />
     </Link>
   </div>
 );

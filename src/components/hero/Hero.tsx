@@ -16,7 +16,7 @@ const Hero = () => {
                 delay={500}
                 className="text-zinc-100"
               />
-              {/* <span className="text-[#F5F000]">.</span> */}
+              <span className="text-[#F5F000]">🦄</span>
             </h1>
           </Reveal>
           <Reveal>
@@ -37,8 +37,8 @@ const Hero = () => {
             </h2>
           </Reveal>
           <Reveal>
-            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-2xl text-sm md:text-lg text-[zinc-300] font-light tracking-wide">
-              Profesional tech-creativa enfocada en crear experiencias digitales con identidad, usabilidad y tecnología. Integro branding estratégico y desarrollo front-end para dar vida a productos centrados en el usuario.
+            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-2xl text-sm md:text-xl text-[zinc-300] font-normal tracking-wide">
+              Transformando ideas en experiencias digitales interactivas y fluidas con desarrollo <b>frontend</b> de vanguardia y <b>diseño</b> visual estratégico.
             </p>
           </Reveal>
           <Reveal>

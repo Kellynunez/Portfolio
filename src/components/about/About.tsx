@@ -3,49 +3,41 @@ import { SectionHeader } from "../util/SectionHeader";
 import Reveal from "../util/Reveal";
 import { MyLinks } from "../nav/Header";
 import { Stats } from "./Stats";
+import { Stats2 } from "./Stats2";
 
 export const About = () => {
   return (
     <section id="about" className="section-wrapper">
       <SectionHeader title="About" dir="l" />
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-8">
-        <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="space-y-4 pb-4 sm:pb-5 md:pb-8 col-span-2">
           <Reveal>
             <p className="leading-relaxed text-zinc-300">
-              <span className="bg-indigo-500 text-white py-2 px-3 rounded font-bold mr-1 float-left text-2xl">
+              <span className="bg-[#00FF85] text-black py-2 px-3 rounded font-bold mr-1 float-left text-2xl">
                 H
               </span>
-              ey! I&apos;m Bob, if you haven&apos;t already gathered that by
-              now. I&apos;m a painter turned software engineer from Daytona,
-              Florida. I specialize in the backend, primarily Node and Rust, but
-              love building with whatever tools are right for the job.
+              ey! Soy Kelly Núñez, profesional tech-creativa enfocada en crear experiencias digitales con identidad, usabilidad y tecnología. 
+              Cuento con una sólida trayectoria dirigiendo equipos de diseño y desarrollo en entornos de software, implementando metodologías ágiles con herramientas de productividad.
             </p>
           </Reveal>
           <Reveal>
             <p className="leading-relaxed text-zinc-300">
-              I currently work for Google on Google Photos. I also toss in my ¢2
-              with the design systems teams from time to time (once an artist,
-              always an artist, amirite?).
+            Estoy especializada en la creación de interfaces escalables y modernas mediante Tailwind CSS y Sass. 
+            Cuento con experiencia en React, Next.js y Vue, utilizando TypeScript y GitHub para garantizar código robusto, mantenible y colaborativo. 
+            Desarrollo aplicaciones web interactivas de alto rendimiento que combinan estética, funcionalidad y SEO.            
+ 
             </p>
           </Reveal>
           <Reveal>
             <p className="leading-relaxed text-zinc-300">
-              Outside of work, I still love to paint. Any given Sunday
-              you&apos;ll find me scribbling some happy clouds with my son ☁️ I
-              even teach courses online if you&apos;re looking to learn!
-            </p>
-          </Reveal>
-          <Reveal>
-            <p className="leading-relaxed text-zinc-300">
-              I&apos;m passively looking for new positions where I can merge my
-              love for code with my love for the canvas. If you think
-              you&apos;ve got an opening that I might like, let&apos;s connect
-              🔗
+            Además, diseño activos gráficos publicitarios y sistemas visuales alineados con el branding, asegurando coherencia entre identidad de marca y experiencia digital.
+            Estoy buscando nuevas oportunidades donde pueda combinar mi amor por el diseño con mi amor por el código. 
+            Si conoces un proyecto atractivo donde pueda aportar, ¡hablemos!
             </p>
           </Reveal>
           <Reveal>
             <div className="flex items-center gap-6">
-              <div className="flex items-center gap-4 text-sm text-indigo-300">
+              <div className="flex items-center gap-4 text-sm text-[#1E90FF]">
                 <span>My links</span>
                 <AiOutlineArrowRight />
               </div>
@@ -54,6 +46,9 @@ export const About = () => {
           </Reveal>
         </div>
         <Stats />
+      </div>
+      <div className="relative">
+        <Stats2 />
       </div>
     </section>
   );

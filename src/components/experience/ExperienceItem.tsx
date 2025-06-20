@@ -5,6 +5,7 @@ interface Props {
   title: string;
   position: string;
   time: string;
+  mode: string;
   location: string;
   description: string;
   tech: string[];
@@ -13,6 +14,7 @@ interface Props {
 export const ExperienceItem = ({
   title,
   position,
+  mode,
   time,
   location,
   description,
@@ -22,7 +24,9 @@ export const ExperienceItem = ({
     <div className="mb-6 border-b pb-6 border-zinc-700">
       <div className="flex items-center justify-between mb-2">
         <Reveal>
-          <span className="font-bold text-xl">{title}</span>
+          <div>
+            <span className="font-bold text-xl">{title}</span> ({location})
+          </div>
         </Reveal>
         <Reveal>
           <span>{time}</span>
@@ -34,7 +38,7 @@ export const ExperienceItem = ({
           <span className="text-indigo-300 font-bold">{position}</span>
         </Reveal>
         <Reveal>
-          <span>{location}</span>
+          <span>{mode}</span>
         </Reveal>
       </div>
       <Reveal>
