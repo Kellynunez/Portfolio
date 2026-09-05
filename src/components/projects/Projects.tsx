@@ -18,10 +18,10 @@ export const Projects = () => {
 
 const projects = [
    {
-    title: "Atomic Design System",
+    title: "Design System",
     imgSrc: "/project-imgs/system-design.webp",
     projectLink: "https://voltron-data.netlify.app/codex",
-    tech: ["React", "Tailwind", "Sanity", "Motion", "Lottie Files", "Cursor", "Figma"],
+    tech: ["Figma", "Tokens", "Auto-layout", "React", "Tailwind", "Lottie Files"],
     description:
       "Xyz",
     galleryImages: [
@@ -59,7 +59,7 @@ const projects = [
     title: "Diseño y Web Responsive",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltrondata-v1.netlify.app",
-    tech: ["Jekyll", "Vue", "Tailwind", "Markdown", "Figma", "Midjourney", "Wordpress"],
+    tech: ["Jekyll", "Vue", "Tailwind", "Markdown", "Figma", "Midjourney", "Cursor"],
     description:
       "Xyz",
     galleryImages: [
