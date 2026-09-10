@@ -18,14 +18,18 @@ export const Projects = () => {
 
 const projects = [
    {
-    title: "Design Systems",
+    title: "Product Design System",
     imgSrc: "/project-imgs/system-design.webp",
     projectLink: "https://www.figma.com/proto/x4j8ruqRJ7tyxrQJ6eQNoF/Inkaclub-%E2%80%93-Inkafarma?node-id=78-5205&t=JD9em8173HQAh4FF-1",
     tech: ["Figma", "Design Tokens", "UI Kit", "Auto-layout", "React", "Tailwind"],
     description:
       "Xyz",
     galleryImages: [
-      "/project-imgs/design-system/design-system-voltron-1.webp",
+      "/project-imgs/design-system/docu.webp",
+      "/project-imgs/design-system/flujos.webp",
+      "/project-imgs/design-system/uikit.webp",
+      "/project-imgs/design-system/wireframe.webp",
+      "/project-imgs/design-system/prototipo.webp",
     ],
 
     galleryMoreImages: [
@@ -53,7 +57,7 @@ const projects = [
     ],
   },
   {
-    title: "Diseño Web Responsive",
+    title: "Caso de Estudio: E2E",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltrondata-v1.netlify.app",
     tech: ["Figma", "Midjourney", "Cursor", "React", "Vue", "Tailwind", "Markdown"],
@@ -120,7 +124,7 @@ const projects = [
     ],
   },
   {
-    title: "Web Apps Projects",
+    title: "Web App Projects",
     imgSrc: "/project-imgs/webapp-project.webp",
     projectLink: "",
     tech: ["Figma","Adobe XD", "Vue", "Scss", "Materialize", "Stripe", "Jupyter"],
@@ -180,7 +184,7 @@ const projects = [
     ],
   },
   {
-    title: "Social Media",
+    title: "Product Marketing",
     imgSrc: "/project-imgs/social-media.webp",
     projectLink: "",
     tech: ["X", "LinkedIn", "Facebook", "Illustrator", "Photoshop", "CapCutAi", "LLMs"],
@@ -194,11 +198,11 @@ const projects = [
       "/project-imgs/social-media/social-post.webp",
       "/project-imgs/social-media/social-monopoly.webp",
       "/project-imgs/social-media/social-newsletter-engine.webp",
-      "/project-imgs/social-media/social-festivity.webp",
-      "/project-imgs/social-media/social-fashion.webp",
     ],
 
     galleryMoreImages: [
+      "/project-imgs/social-media/social-festivity.webp",
+      "/project-imgs/social-media/social-fashion.webp",
     ],
   },
 ];
