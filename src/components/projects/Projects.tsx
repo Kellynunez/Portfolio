@@ -18,13 +18,22 @@ export const Projects = () => {
 
 const projects = [
    {
-    title: "Design System",
+    title: "Product Design System",
     imgSrc: "/project-imgs/system-design.webp",
-    projectLink: "https://voltron-data.netlify.app/codex",
-    tech: ["Figma", "Tokens", "Auto-layout", "React", "Tailwind", "Lottie Files"],
+    projectLink: "https://www.figma.com/proto/x4j8ruqRJ7tyxrQJ6eQNoF/Inkaclub-%E2%80%93-Inkafarma?node-id=78-5205&t=JD9em8173HQAh4FF-1",
+    tech: ["Figma", "Design Tokens", "UI Kit", "Auto-layout", "React", "Tailwind"],
     description:
       "Xyz",
     galleryImages: [
+      "/project-imgs/design-system/docu.webp",
+      "/project-imgs/design-system/flujos.webp",
+      "/project-imgs/design-system/uikit.webp",
+      "/project-imgs/design-system/wireframe.webp",
+      "/project-imgs/design-system/prototipo.webp",
+    ],
+
+    galleryMoreImages: [
+      "/project-imgs/design-system/portada.webp",
       "/project-imgs/design-system/design-system-voltron-1.webp",
       "/project-imgs/design-system/design-system-voltron-2.webp",
       "/project-imgs/design-system/design-system-voltron-3.webp",
@@ -45,21 +54,13 @@ const projects = [
       "/project-imgs/design-system/design-system-voltron-18.webp",
       "/project-imgs/design-system/design-system-voltron-19.webp",
       "/project-imgs/design-system/design-system-voltron-20.webp",
-      "/project-imgs/design-system/atomos.webp",
-      "/project-imgs/design-system/moleculas.webp",
-      "/project-imgs/design-system/organismos.webp",
-      "/project-imgs/design-system/plantillas.webp",
-      "/project-imgs/design-system/paginas.webp",
-    ],
-
-    galleryMoreImages: [
     ],
   },
   {
-    title: "Diseño y Web Responsive",
+    title: "Caso de Estudio: E2E",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltrondata-v1.netlify.app",
-    tech: ["Jekyll", "Vue", "Tailwind", "Markdown", "Figma", "Midjourney", "Cursor"],
+    tech: ["Figma", "Midjourney", "Cursor", "React", "Vue", "Tailwind", "Markdown"],
     description:
       "Xyz",
     galleryImages: [
@@ -97,7 +98,7 @@ const projects = [
     ],
   },
   {
-    title: "UI/UX & Prototipos Móviles",
+    title: "Mobile First Design",
     imgSrc: "/project-imgs/apps-mobile.webp",
     projectLink: "https://goo.su/ziNdk",
     tech: ["Figma", "Lucidchart", "Midjourney", "Adobe XD", "Miro"],
@@ -115,20 +116,31 @@ const projects = [
       "/project-imgs/pos-niubiz/pos-mobile.webp",
       "/project-imgs/pos-niubiz/pos-ux1.webp",
       "/project-imgs/pos-niubiz/pos-ux2.webp",
+      
+      "/project-imgs/app-project/app-livetrade.webp",
+      "/project-imgs/app-project/app-mobile.webp",
 
+      "/project-imgs/app-project/app-mystery.webp",
+    ],
+  },
+  {
+    title: "Web App Projects",
+    imgSrc: "/project-imgs/webapp-project.webp",
+    projectLink: "",
+    tech: ["Figma","Adobe XD", "Vue", "Scss", "Materialize", "Stripe", "Jupyter"],
+    description:
+      "Xyz",
+    galleryImages: [
       "/project-imgs/app-project/app-header.webp",
       "/project-imgs/app-project/app-blazing.webp",
       "/project-imgs/app-project/app-login.webp",
       "/project-imgs/app-project/app-dev.webp",
+    ],
 
+    galleryMoreImages: [
       "/project-imgs/app-project/app-spacedat.webp",
       "/project-imgs/app-project/app-navbar.webp",
       "/project-imgs/app-project/app-dashboard.webp",
-
-      "/project-imgs/app-project/app-mystery.webp",
-      
-      "/project-imgs/app-project/app-livetrade.webp",
-      "/project-imgs/app-project/app-mobile.webp",
     ],
   },
   {
@@ -148,6 +160,9 @@ const projects = [
       "/project-imgs/brand-identity/icons-graphics-codex.webp",
       "/project-imgs/brand-identity/branding-merch.webp",
       "/project-imgs/brand-identity/branding-booth.webp",
+    ],
+
+    galleryMoreImages: [
       "/project-imgs/brand-identity/logo-codex.webp",
       "/project-imgs/brand-identity/logo-theseus.webp",
       "/project-imgs/brand-identity/logo-rapids.webp",
@@ -156,14 +171,20 @@ const projects = [
       "/project-imgs/brand-identity/unicod-header.webp",
       "/project-imgs/brand-identity/unicod-logo.webp",
       "/project-imgs/brand-identity/unicod-stationary.webp",
+      "/project-imgs/pitch-deck/slides-header.webp",
+      "/project-imgs/pitch-deck/slides-guides.webp",
+      "/project-imgs/pitch-deck/slides-spacedat.webp",
+      "/project-imgs/pitch-deck/slides-niubiz.webp",
+      "/project-imgs/pitch-deck/slides-rappi.webp",
+      "/project-imgs/pitch-deck/slides-avelina.webp",
+      "/project-imgs/pitch-deck/slides-lalucha.webp",
+      "/project-imgs/pitch-deck/slides-cybergarden.webp",
+      "/project-imgs/pitch-deck/slides-university.webp",
       "/project-imgs/brand-identity/branding-newyorkcity.webp",
-    ],
-
-    galleryMoreImages: [
     ],
   },
   {
-    title: "Social Media",
+    title: "Product Marketing",
     imgSrc: "/project-imgs/social-media.webp",
     projectLink: "",
     tech: ["X", "LinkedIn", "Facebook", "Illustrator", "Photoshop", "CapCutAi", "LLMs"],
@@ -177,33 +198,11 @@ const projects = [
       "/project-imgs/social-media/social-post.webp",
       "/project-imgs/social-media/social-monopoly.webp",
       "/project-imgs/social-media/social-newsletter-engine.webp",
+    ],
+
+    galleryMoreImages: [
       "/project-imgs/social-media/social-festivity.webp",
       "/project-imgs/social-media/social-fashion.webp",
-    ],
-
-    galleryMoreImages: [
-    ],
-  },
-  {
-    title: "Slides Master",
-    imgSrc: "/project-imgs/pitch-deck.webp",
-    projectLink: "",
-    tech: ["Google Slides", "Gemini", "Keynote", "Illustrator", "Photoshop"],
-    description:
-      "Xyz",
-    galleryImages: [
-      "/project-imgs/pitch-deck/slides-header.webp",
-      "/project-imgs/pitch-deck/slides-guides.webp",
-      "/project-imgs/pitch-deck/slides-spacedat.webp",
-      "/project-imgs/pitch-deck/slides-niubiz.webp",
-      "/project-imgs/pitch-deck/slides-rappi.webp",
-      "/project-imgs/pitch-deck/slides-avelina.webp",
-      "/project-imgs/pitch-deck/slides-lalucha.webp",
-      "/project-imgs/pitch-deck/slides-cybergarden.webp",
-      "/project-imgs/pitch-deck/slides-university.webp",
-    ],
-
-    galleryMoreImages: [
     ],
   },
 ];
